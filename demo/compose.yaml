@@ -32,8 +32,9 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
       WORDPRESS_CONFIG_EXTRA: |
-        define('WP_HOME', 'http://127.0.0.1:18766');
-        define('WP_SITEURL', 'http://127.0.0.1:18766');
+        if (!empty($$_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower(trim(explode(',', $$_SERVER['HTTP_X_FORWARDED_PROTO'])[0])) === 'https') { $$_SERVER['HTTPS'] = 'on'; }
+        define('WP_HOME', 'http://127.0.0.1:18765');
+        define('WP_SITEURL', 'http://127.0.0.1:18765');
         define('DISALLOW_FILE_EDIT', true);
     ports:
       - "127.0.0.1:18765:80"

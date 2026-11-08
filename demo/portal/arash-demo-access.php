@@ -1,6 +1,16 @@
 <?php
 /** Demo-only routes and access limits for the public WordPress demo. */
 function arash_demo_is_operator(): bool { return in_array('demo_operator', (array) wp_get_current_user()->roles, true); }
+function arash_demo_is_pricing_screen(): bool {
+    return is_admin()
+        && ($GLOBALS['pagenow'] ?? '') === 'admin.php'
+        && sanitize_key(wp_unslash($_GET['page'] ?? '')) === 'arash-bulk-pricing';
+}
+function arash_demo_deny_mutation(): void {
+    status_header(403);
+    nocache_headers();
+    wp_die('این حساب فقط برای مشاهده و پیش‌نمایش است؛ ذخیره‌سازی در دموی عمومی غیرفعال است.', 'دسترسی فقط‌خواندنی', ['response' => 403]);
+}
 function arash_demo_throttle(string $bucket, int $limit, int $seconds, string $scope = ''): void {
     $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
     $key = 'arash_demo_rl_' . md5($bucket . '|' . $ip . '|' . get_current_user_id() . '|' . $scope);
@@ -34,15 +44,44 @@ add_action('admin_menu', function () {
         }
     }
 }, 1001);
+add_action('wp_loaded', function () {
+    if (!arash_demo_is_operator()) return;
+
+    $method = strtoupper((string) ($_SERVER['REQUEST_METHOD'] ?? 'GET'));
+    $action = isset($_REQUEST['action']) ? sanitize_key(wp_unslash($_REQUEST['action'])) : '';
+    $script = basename((string) ($_SERVER['SCRIPT_NAME'] ?? ''));
+
+    // The single preview request is read-only; every other write verb is denied before handlers run.
+    if ($script === 'admin-ajax.php' && $method === 'POST' && $action === 'arash_bulk_price_filter') return;
+    if (in_array($method, ['POST', 'PUT', 'PATCH', 'DELETE'], true) || $action === 'arash_bulk_price_update') {
+        arash_demo_deny_mutation();
+    }
+}, 0);
+add_filter('rest_pre_dispatch', function ($result, $server, $request) {
+    if (!arash_demo_is_operator()) return $result;
+    if (in_array(strtoupper($request->get_method()), ['GET', 'HEAD', 'OPTIONS'], true)) return $result;
+
+    return new WP_Error('arash_demo_read_only', 'این حساب فقط برای خواندن اطلاعات دمو مجاز است.', ['status' => 403]);
+}, 10, 3);
+add_action('admin_head', function () {
+    if (!arash_demo_is_operator() || !arash_demo_is_pricing_screen()) return;
+    echo '<style id="arash-demo-read-only">#abp-save-changes,.abp-save-row{display:none!important}</style>';
+    echo '<script id="arash-demo-read-only-controls">document.addEventListener("DOMContentLoaded",function(){var disable=function(){document.querySelectorAll("#abp-save-changes,.abp-save-row").forEach(function(button){button.disabled=true;button.setAttribute("aria-hidden","true");});};disable();new MutationObserver(disable).observe(document.body,{childList:true,subtree:true});});</script>';
+});
+add_action('admin_notices', function () {
+    if (!arash_demo_is_operator() || !arash_demo_is_pricing_screen()) return;
+    echo '<div class="notice notice-info"><p>' . esc_html__('دمو فقط برای مشاهده و پیش‌نمایش است؛ ذخیره‌سازی در این محیط غیرفعال است.', 'arash-bulk-pricing') . '</p></div>';
+});
 add_action('admin_init', function () {
     if (!arash_demo_is_operator()) return;
     if (wp_doing_ajax()) {
         $action = isset($_REQUEST['action']) ? sanitize_key(wp_unslash($_REQUEST['action'])) : '';
-        if (!in_array($action, ['arash_bulk_price_update', 'arash_bulk_price_filter'], true)) wp_die('این حساب فقط برای پیش‌نمایش افزونه است.', 'دسترسی محدود', ['response' => 403]);
-        arash_demo_throttle($action === 'arash_bulk_price_update' ? 'update' : 'filter', $action === 'arash_bulk_price_update' ? 10 : 40, 60, $action);
+        if ($action !== 'arash_bulk_price_filter') arash_demo_deny_mutation();
+        arash_demo_throttle('filter', 40, 60, $action);
         return;
     }
-    if (($GLOBALS['pagenow'] ?? '') === 'admin.php' && sanitize_key(wp_unslash($_GET['page'] ?? '')) === 'arash-bulk-pricing') return;
+    if (in_array(strtoupper((string) ($_SERVER['REQUEST_METHOD'] ?? 'GET')), ['GET', 'HEAD'], true)
+        && arash_demo_is_pricing_screen()) return;
     wp_safe_redirect(admin_url('admin.php?page=arash-bulk-pricing')); exit;
 }, 1);
 add_filter('authenticate', function ($user) {
@@ -73,7 +112,7 @@ add_action('init', function () {
     $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown'; $key = 'arash_demo_entry_' . md5($ip); $count = (int) get_transient($key);
     if ($count >= 60) { status_header(429); header('Retry-After: 60'); wp_die('درخواست‌های پی‌درپی محدود شده‌اند؛ کمی بعد دوباره تلاش کنید.', 'محدودیت درخواست', ['response' => 429]); }
     set_transient($key, $count + 1, MINUTE_IN_SECONDS);
-    wp_set_current_user($users[0]->ID); wp_set_auth_cookie($users[0]->ID, true, is_ssl());
+    wp_set_current_user($users[0]->ID); wp_set_auth_cookie($users[0]->ID, false, is_ssl());
     wp_safe_redirect(admin_url('admin.php?page=arash-bulk-pricing')); exit;
 }, 0);
 add_action('template_redirect', function () {
