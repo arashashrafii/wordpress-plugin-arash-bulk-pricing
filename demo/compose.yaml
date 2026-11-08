@@ -1,0 +1,50 @@
+services:
+  database:
+    image: mariadb:10.11
+    container_name: arash-bulk-pricing-demo-db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Set DB_ROOT_PASSWORD in .env}
+    volumes:
+      - database_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    mem_limit: 512m
+
+  wordpress:
+    build: .
+    container_name: arash-bulk-pricing-demo-web
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://127.0.0.1:18766');
+        define('WP_SITEURL', 'http://127.0.0.1:18766');
+        define('DISALLOW_FILE_EDIT', true);
+    ports:
+      - "127.0.0.1:18765:80"
+    volumes:
+      - wordpress_data:/var/www/html
+    mem_limit: 768m
+
+volumes:
+  database_data:
+  wordpress_data:
+
+networks:
+  default:
+    name: arash-bulk-pricing-demo

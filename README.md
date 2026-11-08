@@ -1,1 +1,11 @@
-# wordpress-plugin-arash-bulk-pricing
+# Arash Bulk Pricing
+
+افزونهٔ وردپرس «قیمت‌گذاری گروهی آرش» برای بازار فارسی.
+
+- سورس افزونه: `plugin/`
+- پیکربندی دمو: `demo/`
+- تعریف تسک ادامه و معیارهای پذیرش: `NEXT-TASK-fa.md`
+- تاریخچهٔ تصمیم‌های تجاری: `docs/arash-bulk-pricing-commercialization.md`
+- چک‌لیست انتشار: `docs/RELEASE-CHECKLIST-fa.md`
+
+برای کارهای باقی‌مانده، ابتدا `NEXT-TASK-fa.md` و سپس اسناد مرتبط را بخوانید. فایل‌های محرمانهٔ محیط دمو نباید در این مخزن قرار گیرند.

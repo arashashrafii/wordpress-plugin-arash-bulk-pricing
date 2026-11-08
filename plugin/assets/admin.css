@@ -1,0 +1,136 @@
+.arash-bulk-pricing .abp-filters,.arash-bulk-pricing .abp-operation{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:16px 0}.arash-bulk-pricing .abp-operation{padding:12px;background:#fff;border:1px solid #dcdcde}.arash-bulk-pricing .abp-table th,.arash-bulk-pricing .abp-table td{vertical-align:middle}.arash-bulk-pricing .abp-table .check-column{width:32px}.arash-bulk-pricing #abp-status{font-weight:600}.arash-bulk-pricing input[type=number]{width:110px}.arash-bulk-pricing .abp-inline{width:105px}.arash-bulk-pricing .abp-date-inline{width:105px}.arash-bulk-pricing .abp-variation{background:#f6f7f7}
+.arash-bulk-pricing .abp-parent{background:#eef2f5}.arash-bulk-pricing .abp-parent-label{color:#646970;font-size:12px}
+.arash-bulk-pricing .abp-table tr.abp-dirty{background:#fff8e5}.arash-bulk-pricing #abp-save-changes{font-weight:600}
+.arash-bulk-pricing .abp-table-wrap{width:100%;overflow-x:auto}
+.arash-bulk-pricing .abp-table{min-width:1100px;table-layout:fixed}
+.arash-bulk-pricing .abp-table th:nth-child(2),.arash-bulk-pricing .abp-table td:nth-child(2){width:26%}
+.arash-bulk-pricing .abp-table th:nth-child(3),.arash-bulk-pricing .abp-table td:nth-child(3){width:7.5%}
+.arash-bulk-pricing .abp-table th:nth-child(4),.arash-bulk-pricing .abp-table td:nth-child(4){width:7.5%}
+.arash-bulk-pricing .abp-table th:nth-child(5),.arash-bulk-pricing .abp-table td:nth-child(5),.arash-bulk-pricing .abp-table th:nth-child(6),.arash-bulk-pricing .abp-table td:nth-child(6){width:10.5%}
+.arash-bulk-pricing .abp-table th:nth-child(7),.arash-bulk-pricing .abp-table td:nth-child(7){width:34%}
+.arash-bulk-pricing .abp-table .abp-inline{box-sizing:border-box;width:100%;max-width:120px;min-width:76px}
+.arash-bulk-pricing .abp-date-controls{display:flex;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:6px;white-space:nowrap}
+.arash-bulk-pricing .abp-date-controls .abp-date-inline{box-sizing:border-box;flex:1 1 96px;width:96px;min-width:74px;max-width:120px}
+.arash-bulk-pricing .abp-date-controls .abp-save-row{flex:0 0 auto;padding:0 8px}
+.arash-bulk-pricing .abp-pagination{display:flex;align-items:center;gap:10px;min-height:34px;margin:10px 0;color:#50575e}
+.arash-bulk-pricing .abp-pagination span{font-weight:600}
+.arash-bulk-pricing .abp-empty{text-align:center;padding:24px;color:#646970}
+.arash-bulk-pricing .abp-table-toolbar{margin:14px 0 0;padding:10px 12px 0;background:#fff;border:1px solid #c3c4c7;border-bottom:0}
+.arash-bulk-pricing .abp-table-toolbar-top{display:grid;grid-template-columns:minmax(0,1fr);row-gap:8px}
+.arash-bulk-pricing .abp-toolbar-filter-row,.arash-bulk-pricing .abp-toolbar-paging-row{box-sizing:border-box;width:100%;min-width:0}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters{flex:1 1 auto;margin:0;gap:8px}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters input[type=search]{width:clamp(220px,26vw,360px)}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=category]{width:clamp(170px,24vw,330px)}
+.arash-bulk-pricing .abp-table-paging{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-top:8px;padding-top:8px;border-top:1px solid #e2e4e7}
+.arash-bulk-pricing .abp-table-paging label{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.arash-bulk-pricing .abp-table-paging select{min-width:68px}
+.arash-bulk-pricing .abp-table-toolbar .abp-pagination{margin:0;min-height:0;white-space:nowrap}
+.arash-bulk-pricing .abp-table-toolbar .abp-operation{margin:0;padding:10px 0;border:0;border-bottom:1px solid #dcdcde;background:transparent}
+.arash-bulk-pricing .abp-table-wrap{margin-top:0}
+.arash-bulk-pricing .abp-pagination-bottom{justify-content:flex-end;margin-top:8px;padding:8px 2px}
+@media(max-width:1100px){.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=category]{width:auto;max-width:100%}.arash-bulk-pricing .abp-table-paging{align-items:flex-start;flex-direction:column}}
+.arash-bulk-pricing{max-width:1600px}
+.arash-bulk-pricing>h1{margin:20px 0 6px;color:#1d2327;font-size:23px;font-weight:600}
+.arash-bulk-pricing>p.description{max-width:1050px;margin:0 0 18px;color:#646970;line-height:1.8}
+.arash-bulk-pricing .abp-table-toolbar{overflow:hidden;margin-top:0;padding:0;background:#fff;border:1px solid #dcdcde;border-radius:6px 6px 0 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.arash-bulk-pricing .abp-operation{display:block;margin:0;padding:14px 16px;background:#f8fafc;border:0;border-bottom:1px solid #e2e4e7}
+.arash-bulk-pricing .abp-operation-heading{display:flex;align-items:baseline;gap:10px;margin-bottom:11px}
+.arash-bulk-pricing .abp-operation-heading strong{color:#1d2327;font-size:14px}
+.arash-bulk-pricing .abp-operation-heading span{color:#646970;font-size:12px}
+.arash-bulk-pricing .abp-operation-fields{display:grid;grid-template-columns:minmax(130px,.9fr) minmax(170px,1.2fr) minmax(130px,.8fr) minmax(155px,1fr) minmax(155px,1fr);gap:10px;align-items:end}
+.arash-bulk-pricing .abp-operation-fields>select,.arash-bulk-pricing .abp-operation-fields>input,.arash-bulk-pricing .abp-operation-fields>label{box-sizing:border-box;width:100%;min-width:0;height:36px}
+.arash-bulk-pricing .abp-operation-fields>label{display:flex;align-items:center;gap:7px;white-space:nowrap;color:#50575e}
+.arash-bulk-pricing .abp-operation-fields>label input{box-sizing:border-box;width:100%;min-width:0;height:36px}
+.arash-bulk-pricing .abp-operation-actions{display:flex;align-items:center;gap:8px;margin-top:12px}
+.arash-bulk-pricing .abp-operation-actions button{min-height:34px;padding:0 12px}
+.arash-bulk-pricing .abp-operation-actions #abp-status{margin-inline-start:6px;color:#50575e}
+.arash-bulk-pricing .abp-table-toolbar-top{padding:12px 16px 0px}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters{gap:10px}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters input[type=search],.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=category]{box-sizing:border-box;height:36px;border-radius:4px}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters input[type=search]{max-width:340px}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=category]{max-width:290px}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters label{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;color:#50575e}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters button{min-height:36px;padding:0 14px}
+.arash-bulk-pricing .abp-table-paging{margin-top:10px;padding-top:10px;border-color:#f0f0f1}
+.arash-bulk-pricing .abp-table-paging label{color:#50575e}
+.arash-bulk-pricing .abp-table-wrap{border:1px solid #dcdcde;border-top:0;border-radius:0 0 6px 6px;background:#fff}
+.arash-bulk-pricing .abp-table{border:0;border-radius:0 0 6px 6px}
+.arash-bulk-pricing .abp-table thead th{height:42px;background:#f6f7f7;color:#2c3338;font-weight:600;border-bottom:1px solid #dcdcde}
+.arash-bulk-pricing .abp-table th,.arash-bulk-pricing .abp-table td{padding:8px 10px}
+.arash-bulk-pricing .abp-table tbody tr{height:54px}
+.arash-bulk-pricing .abp-table tbody tr:hover{background:#f6faff}
+.arash-bulk-pricing .abp-table .abp-inline,.arash-bulk-pricing .abp-date-controls .abp-date-inline{height:34px;border:1px solid #8c8f94;border-radius:4px;padding:0 8px}
+.arash-bulk-pricing .abp-date-controls .abp-save-row{min-height:34px;border-radius:4px}
+.arash-bulk-pricing .abp-table tr.abp-dirty{background:#fff8e5}
+.arash-bulk-pricing .abp-pagination-bottom{margin:6px 0 18px;padding:8px 4px}
+.arash-bulk-pricing .abp-operation-fields{grid-template-columns:150px 180px 140px minmax(160px,1fr) minmax(160px,1fr)}
+.arash-bulk-pricing .abp-operation-fields>#abp-field{max-width:150px}
+.arash-bulk-pricing .abp-operation-fields>#abp-operation{max-width:180px}
+.arash-bulk-pricing .abp-operation-actions{flex-wrap:nowrap}
+.arash-bulk-pricing .abp-operation-actions button{flex:0 0 auto;white-space:nowrap}
+.arash-bulk-pricing .abp-operation-actions #abp-status{flex:1 1 auto;min-width:0}
+.arash-bulk-pricing .abp-table-paging{position:relative;justify-content:center}
+.arash-bulk-pricing .abp-table-paging>label{position:absolute;inset-inline-start:0}
+.arash-bulk-pricing .abp-table-toolbar .abp-pagination{justify-content:center}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters button[type=submit]{margin-inline-start:auto}
+.arash-bulk-pricing .abp-table-wrap{overflow-x:auto;overflow-y:hidden}
+.arash-bulk-pricing .abp-table-grid{overflow:hidden;border:1px solid #dcdcde;border-radius:0 0 6px 6px;background:#fff}
+.arash-bulk-pricing .abp-table-wrap{border:0;border-radius:0}
+.arash-bulk-pricing .abp-pagination-bottom{justify-content:center;min-height:48px;margin:0;padding:8px 12px;border-top:1px solid #e2e4e7;background:#f6f7f7}
+@media(max-width:900px){.arash-bulk-pricing .abp-operation-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.arash-bulk-pricing .abp-operation-fields>#abp-field,.arash-bulk-pricing .abp-operation-fields>#abp-operation{max-width:none}.arash-bulk-pricing .abp-operation-heading{align-items:flex-start;flex-direction:column;gap:2px}.arash-bulk-pricing .abp-table-toolbar .abp-filters input[type=search]{width:min(100%,360px)}.arash-bulk-pricing .abp-table-paging{align-items:center;flex-direction:row}.arash-bulk-pricing .abp-table-paging>label{position:static}}
+.arash-bulk-pricing .abp-operation{padding:12px 14px}
+.arash-bulk-pricing .abp-operation-row{display:grid;grid-template-columns:120px 155px 112px 145px 145px 142px 116px;align-items:center;justify-content:start;gap:8px}
+.arash-bulk-pricing .abp-operation-row>select,.arash-bulk-pricing .abp-operation-row>input{box-sizing:border-box;width:100%;min-width:0;height:36px}
+.arash-bulk-pricing .abp-operation-row>#abp-field,.arash-bulk-pricing .abp-operation-row>#abp-operation{max-width:none}
+.arash-bulk-pricing .abp-operation-row>button{box-sizing:border-box;width:100%;height:36px;margin:0;padding:0 8px;white-space:nowrap}
+.arash-bulk-pricing #abp-status{display:block;margin-top:8px;color:#50575e}
+.arash-bulk-pricing #abp-status:empty{display:none}
+@media(max-width:1100px){.arash-bulk-pricing .abp-operation-row{grid-template-columns:repeat(4,minmax(120px,1fr))}.arash-bulk-pricing .abp-operation-row>button{width:auto}}
+.arash-bulk-pricing .abp-operation-row{width:100%;grid-template-columns:minmax(120px,.9fr) minmax(160px,1.2fr) minmax(120px,.8fr) minmax(155px,1fr) minmax(155px,1fr) 150px 140px}
+.arash-bulk-pricing .abp-operation-row>select,.arash-bulk-pricing .abp-operation-row>input,.arash-bulk-pricing .abp-filters input[type=search],.arash-bulk-pricing .abp-filters select[name=category],.arash-bulk-pricing .abp-table-paging select{box-sizing:border-box;height:36px;margin:0;padding:0 10px;border:1px solid #8c8f94;border-radius:4px;background-color:#fff;color:#2c3338;font:inherit;font-size:13px;line-height:normal}
+.arash-bulk-pricing .abp-operation-row>select:focus,.arash-bulk-pricing .abp-operation-row>input:focus,.arash-bulk-pricing .abp-filters input[type=search]:focus,.arash-bulk-pricing .abp-filters select[name=category]:focus,.arash-bulk-pricing .abp-table-paging select:focus{border-color:#2271b1;box-shadow:0 0 0 1px #2271b1;outline:2px solid transparent}
+.arash-bulk-pricing .abp-operation-row>button,.arash-bulk-pricing .abp-filters button[type=submit],.arash-bulk-pricing .abp-pagination .button{box-sizing:border-box;min-height:36px;margin:0;padding:0 12px;border-radius:4px;font:inherit;font-size:13px;line-height:34px;white-space:nowrap}
+.arash-bulk-pricing .abp-operation-row>button{width:100%}
+@media(max-width:1100px){.arash-bulk-pricing .abp-operation-row{grid-template-columns:repeat(4,minmax(120px,1fr))}.arash-bulk-pricing .abp-operation-row>button{width:100%}}
+.arash-bulk-pricing .abp-operation{padding:16px 20px}
+.arash-bulk-pricing .abp-operation-row{box-sizing:border-box;width:auto;grid-template-columns:minmax(112px,.9fr) minmax(150px,1.2fr) minmax(110px,.8fr) minmax(145px,1fr) minmax(145px,1fr) 142px;gap:10px}
+@media(max-width:1100px){.arash-bulk-pricing .abp-operation-row{width:100%;grid-template-columns:repeat(4,minmax(120px,1fr))}}
+@media(max-width:700px){.arash-bulk-pricing .abp-operation{padding:14px}.arash-bulk-pricing .abp-operation-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.arash-bulk-pricing .abp-table-toolbar .abp-operation{padding:14px}
+@media(max-width:700px){.arash-bulk-pricing .abp-table-toolbar .abp-operation{padding:14px}}
+.arash-bulk-pricing .abp-page-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:20px 0 6px}
+.arash-bulk-pricing .abp-page-heading h1{margin:0;color:#1d2327;font-size:23px;font-weight:600}
+.arash-bulk-pricing .abp-page-heading #abp-save-changes{flex:0 0 auto;min-width:136px;height:36px;padding:0 12px;border-radius:4px;white-space:nowrap;font-size:13px}
+@media(max-width:600px){.arash-bulk-pricing .abp-page-heading{align-items:flex-start;flex-direction:column}}
+.arash-bulk-pricing .abp-operation-row{grid-template-columns:minmax(112px,.9fr) minmax(150px,1.2fr) minmax(110px,.8fr) minmax(145px,1fr) minmax(145px,1fr) 170px}
+.arash-bulk-pricing .abp-operation-row>#abp-apply{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:170px;height:36px;padding:0 12px;border-radius:4px;font-weight:600;line-height:1.4;text-align:center;white-space:nowrap}
+@media(max-width:1100px){.arash-bulk-pricing .abp-operation-row>#abp-apply{grid-column:span 2;width:auto;justify-self:start}}
+@media(max-width:700px){.arash-bulk-pricing .abp-operation-row>#abp-apply{grid-column:1/-1}}
+.arash-bulk-pricing .abp-table-paging{box-sizing:border-box;padding:5px 22px}
+.arash-bulk-pricing .abp-toolbar-paging-row .abp-table-paging{margin-top:0}
+.arash-bulk-pricing .abp-table-paging>label{inset-inline-start:22px}
+.arash-bulk-pricing .abp-table-grid{position:relative}
+.arash-bulk-pricing .abp-grid-loading{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;background:transparent;pointer-events:none}
+.arash-bulk-pricing .abp-grid-loading[hidden]{display:none}
+.arash-bulk-pricing .abp-grid-loading.is-loading{background:rgba(255,255,255,.58);pointer-events:auto}
+.arash-bulk-pricing .abp-table-paging select{height:40px;padding:5px 12px;line-height:1.4}
+.arash-bulk-pricing .abp-table-paging{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;box-sizing:border-box;min-height:52px;margin-top:0;padding:5px 22px}
+.arash-bulk-pricing .abp-table-paging>label{position:static;grid-column:1;justify-self:start}
+.arash-bulk-pricing .abp-table-paging>#abp-pagination-top{grid-column:2;justify-self:center}
+.arash-bulk-pricing .abp-grid-message{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid #dcdcde;border-radius:4px;background:#fff;color:#1d2327;box-shadow:0 2px 10px rgba(0,0,0,.12);font-size:13px;font-weight:600}
+.arash-bulk-pricing .abp-grid-message #abp-status{display:inline;margin:0;color:inherit}
+.arash-bulk-pricing .abp-grid-spinner{display:none;width:16px;height:16px;flex:0 0 16px;border:2px solid #dcdcde;border-top-color:#2271b1;border-radius:50%}
+.arash-bulk-pricing .abp-grid-loading.is-loading .abp-grid-spinner{display:inline-block;animation:abp-loading-spin .75s linear infinite}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_column],.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_operator],.arash-bulk-pricing .abp-table-toolbar .abp-filters input[name=filter_value]{box-sizing:border-box;height:36px;margin:0;padding:0 10px;border:1px solid #8c8f94;border-radius:4px;background:#fff;color:#2c3338;font:inherit;font-size:13px;line-height:normal}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_column]{width:clamp(150px,13vw,180px)}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_operator]{width:clamp(145px,13vw,175px)}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_column],.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_operator],.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=category]{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23646970' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:12px center;background-size:12px 8px;padding-left:32px;cursor:pointer}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters input[name=filter_value]{width:clamp(160px,17vw,230px);max-width:230px}
+.arash-bulk-pricing .abp-filter-date-values{display:flex;align-items:center;gap:6px;flex:0 1 250px;min-width:0}
+.arash-bulk-pricing .abp-filter-date-values[hidden]{display:none}
+.arash-bulk-pricing .abp-filter-date-values input{box-sizing:border-box;width:calc(50% - 8px);min-width:92px;height:36px;margin:0;padding:0 8px;border:1px solid #8c8f94;border-radius:4px;background:#fff;color:#2c3338;font:inherit;font-size:13px;line-height:normal;cursor:pointer}
+.arash-bulk-pricing .abp-filter-date-values input:focus{border-color:#2271b1;box-shadow:0 0 0 1px #2271b1;outline:2px solid transparent}
+.arash-bulk-pricing .abp-date-picker{cursor:pointer}
+.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_column]:focus,.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_operator]:focus,.arash-bulk-pricing .abp-table-toolbar .abp-filters input[name=filter_value]:focus{border-color:#2271b1;box-shadow:0 0 0 1px #2271b1;outline:2px solid transparent}
+@media(max-width:1100px){.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_column],.arash-bulk-pricing .abp-table-toolbar .abp-filters select[name=filter_operator]{width:auto;max-width:100%}.arash-bulk-pricing .abp-table-toolbar .abp-filters input[name=filter_value]{width:min(100%,230px)}}
+@keyframes abp-loading-spin{to{transform:rotate(360deg)}}
